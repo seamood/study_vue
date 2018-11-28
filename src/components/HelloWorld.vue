@@ -1,5 +1,8 @@
 <template>
   <div class="hello">
+    <div class="head">
+      <a href="https://www.ldxxw.com.cn">返回网站首页</a>
+    </div>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -8,7 +11,7 @@
           href="https://vuejs.org"
           target="_blank"
         >
-          Core Docs
+          你
         </a>
       </li>
       <li>
@@ -88,13 +91,18 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      homeUrl: 'https://www.ldxxw.com.cn'
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang="less" scoped>
+@import '../assets/less/index.less';
+</style>
+
 <style scoped>
 h1, h2 {
   font-weight: normal;
@@ -107,7 +115,7 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
+/* a {
   color: #42b983;
-}
+} */
 </style>
