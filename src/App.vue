@@ -2,12 +2,17 @@
   <div id="app">
     <!-- <img src="./assets/images/logo.png"> -->
     <router-view/>
+    <!-- <fristComponent></fristComponent> -->
   </div>
 </template>
 
 <script>
+import fristComponent from './components/fristCompontent'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'fristComponent': fristComponent
+  }
 }
 </script>
 

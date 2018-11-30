@@ -5,84 +5,22 @@
     </div>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+    <div id="example-1">
+      <button v-on:click="add">增加 1</button>
+      <p>这个按钮被点击了 {{ counter }} 次。</p>
+    </div>
     <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          你
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
+      <li v-for=" n in 10 " :key="n">
+        <a href="item.url" target="_blank">{{n}}</a>
       </li>
     </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+    <div>
+      <input v-on:keyup.13="key">key13
+    </div>
+    <div>
+      <input v-model.trim="message" placeholder="edit me">
+      <p>{{message}}</p>
+    </div>
   </div>
 </template>
 
@@ -91,20 +29,34 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      counter: 0,
       msg: 'Welcome to Your Vue.js App',
-      homeUrl: 'https://www.ldxxw.com.cn'
+      homeUrl: 'https://www.ldxxw.com.cn',
+      message: 12
+    }
+  },
+  methods: {
+    add: function (event) {
+      this.counter++
+    },
+    key: function (event) {
+      alert('this is key 13')
     }
   }
 }
+// var app = new vue('#app',{
+
+// })
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-@import '../assets/less/index.less';
+@import "../assets/less/index.less";
 </style>
 
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
