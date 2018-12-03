@@ -21,10 +21,14 @@
       <input v-model.trim="message" placeholder="edit me">
       <p>{{message}}</p>
     </div>
+    <div>
+      <vbutton></vbutton>
+    </div>
   </div>
 </template>
 
 <script>
+import vbutton from '@/components/element-ui/HolleWorld'
 export default {
   name: 'HelloWorld',
   data () {
@@ -34,6 +38,9 @@ export default {
       homeUrl: 'https://www.ldxxw.com.cn',
       message: 12
     }
+  },
+  components: {
+    vbutton
   },
   methods: {
     add: function (event) {
