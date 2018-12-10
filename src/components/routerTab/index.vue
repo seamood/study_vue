@@ -1,14 +1,14 @@
 
 <template>
-  <div class="box">
-    <div class="header" @click="printy(123)">
+  <div class='box'>
+    <div class='header' @click='printy(123)'>
       <vheader></vheader>
     </div>
-    <div class="content">
-      <div class="left-box">
-        <vaside :data = 'links' ref="yeluosen" v-on:onchangeName="changeLanName"></vaside>
+    <div class='content'>
+      <div class='left-box'>
+        <vaside :data='links' ref='yeluosen' v-on:onchangeName='changeLanName'></vaside>
       </div>
-      <div class="right-box">
+      <div class='right-box'>
         <router-view></router-view>
       </div>
     </div>
@@ -18,17 +18,18 @@
 //  引入 头部组件 和 侧边栏组件
 import Vheader from '@/components/routerTab/header'
 import Vaside from '@/components/routerTab/aside'
+import http from '@/components/data'
 // import {cadd} from '@/assets/js/commonTools.js'
- import cadd from '@/assets/js/commonTools.js'
- const add = cadd.add
+import cadd from '@/assets/js/commonTools.js'
+const add = cadd.add
 export default {
   name: 'indexNav',
   data () {
     return {
       links: [
-        {name: 'A组件', url: '/index/aaa'},
-        {name: 'B组件', url: '/index/bbb'},
-        {name: 'c组件', url: '/index/ccc'}
+        { name: 'A组件', url: '/index/aaa' },
+        { name: 'B组件', url: '/index/bbb' },
+        { name: 'c组件', url: '/index/ccc' }
       ]
     }
   },
@@ -53,6 +54,6 @@ export default {
   }
 }
 </script>
-<style lang="less">
+<style lang='less'>
 @import '../../assets/less/changeCompontent.less';
 </style>

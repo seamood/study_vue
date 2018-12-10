@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import element from 'element-ui'
+import 'whatwg-fetch'
 Vue.config.productionTip = false
 Vue.use(element)
 

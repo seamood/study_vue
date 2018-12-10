@@ -4,7 +4,6 @@ import 'whatwg-fetch'
 export default async (type = 'GET', url = '', data = {}, baseUrl = 'browser') => {
   let ajaxUrl = baseUrl + url
   type = type.toUpperCase()
-
   if (type === 'GET') {
     let datas = []
     Object.keys(data).forEach(key => {
@@ -17,20 +16,21 @@ export default async (type = 'GET', url = '', data = {}, baseUrl = 'browser') =>
     method: type,
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      // 'Content-Type': 'application/json',
+
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       // token: store.state.userInfo.token
 
     },
     mode: 'same-origin'
   }
   if (type === 'POST') {
-    // let value = Object.keys(data).map((key) => {
-    //   return encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-    // })
+    let value = Object.keys(data).map((key) => {
+      return encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+    })
     Object.defineProperty(requestConfig, 'body', {
-      value: JSON.stringify(data) // 转为json字符串
-      // value: value.join('&')
+      // value: JSON.stringify(data) // 转为json字符串
+      value: value.join('&')
       // 转为key-value
     })
   }

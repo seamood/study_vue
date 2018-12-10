@@ -1,24 +1,24 @@
 <template>
-  <div class="hello">
-    <div class="head">
-      <a href="https://www.ldxxw.com.cn">返回网站首页</a>
+  <div class='hello'>
+    <div class='head'>
+      <a href='https://www.ldxxw.com.cn'>返回网站首页</a>
     </div>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    <div id="example-1">
-      <button v-on:click="add">增加 1</button>
+    <div id='example-1'>
+      <button v-on:click='add'>增加 1</button>
       <p>这个按钮被点击了 {{ counter }} 次。</p>
     </div>
     <ul>
-      <li v-for=" n in 10 " :key="n">
-        <a href="item.url" target="_blank">{{n}}</a>
+      <li v-for=' n in 10 ' :key='n'>
+        <a href='item.url' target='_blank'>{{n}}</a>
       </li>
     </ul>
     <div>
-      <input v-on:keyup.13="key">key13
+      <input v-on:keyup.13='key'>key13
     </div>
     <div>
-      <input v-model.trim="message" placeholder="edit me">
+      <input v-model.trim='message' placeholder='edit me'>
       <p>{{message}}</p>
     </div>
     <div>
@@ -56,9 +56,9 @@ export default {
 // })
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less" scoped>
-@import "../assets/less/index.less";
+<!-- Add 'scoped' attribute to limit CSS to this component only -->
+<style lang='less' scoped>
+@import '../assets/less/index.less';
 </style>
 
 <style scoped>
